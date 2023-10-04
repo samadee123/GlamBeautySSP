@@ -7,7 +7,7 @@
                         <img src="img/banner/image1.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Skin Care <center>&<br></center> Hair Care</h2>
+                        <h2 style="font-size: 25px;">Skin Care <center>&<br></center> Hair Care</h2>
                         <a href="#">Shop now</a>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                         <img src="img/banner/image2.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Fragrance</h2>
+                        <h2 style="font-size: 25px;">Fragrance</h2>
                         <a href="#">Shop now</a>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <img src="img/banner/image3.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>MakeUp</h2>
+                        <h2 style="font-size: 25px;">MakeUp</h2>
                         <a href="#">Shop now</a>
                     </div>
                 </div>
