@@ -31,7 +31,7 @@
     }
     .th_deg
     {
-        padding: 20px;
+        padding: 15px;
     }
 
     </style>

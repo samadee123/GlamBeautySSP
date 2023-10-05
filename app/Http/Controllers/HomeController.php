@@ -269,4 +269,10 @@ class HomeController extends Controller
         return back();
     }
 
+    public function shop()
+    {
+        $product=Product::all();
+        return view('home.shop',compact('product'));
+    }
+
 }

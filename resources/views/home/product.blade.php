@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3 style="text-align: center; font-weight: bold;">Best Sellers</h3><br>
+                <h1 style="text-align: center; font-weight: bold; font-size: 30px;">Best Sellers</h1><br>
 
                 {{-- <ul class="filter__controls">
                     <li class="active" data-filter="*">Our Products</li>
@@ -31,24 +31,24 @@
                             @csrf
 
                             <div class="row">
-                                <div class="col-md-4">
-                                    <input type="number" name="quantity" value="1" min="1" style="width: 50px; height:20px">
+                                <div class="col-md-3">
+                                    <input type="number" name="quantity" value="1" min="1" class="quantity-input" style="width: 60px; height: 30px; border: 1px solid #ccc; border-radius: 5px; padding: 5px; font-size: 14px;">
                                 </div>
-                                <div class="col-md-4">
-                                    <input type="submit" value="+ Add to cart">
+                                <div class="col-md-3">
+                                    <input type="submit" value="Add to Cart" class="add-to-cart-button" style="background-color: rgb(235, 235, 235); color: black; border: none;border-radius: 5px; padding: 10px 20px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">
                                 </div>
                             </div>
 
-                        </form>
+                        </form>
                         {{-- <a href="#" class="add-cart">+ Add To Cart</a> --}}
                         {{-- <a href="#" class="">Product Details</a> --}}
-                        <div class="rating">
+                        {{-- <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
-                        </div>
+                        </div> --}}
         
 
                         @if ($products->discount_price!==null)

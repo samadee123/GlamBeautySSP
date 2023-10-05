@@ -10,7 +10,7 @@
                             <h2>Let Your Beauty Shine Through</h2>
                             <p>Discover Your Beauty Canvas
                                 with Our Stunning Makeup Collection.</p>
-                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <a href="{{url('/shop')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
