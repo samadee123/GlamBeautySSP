@@ -163,7 +163,7 @@
                         {{-- <a href="#" class="primary-btn">Proceed to checkout</a> --}}
                         <div class="button-container">
                             <a href="{{url('cash_order',$totalproduct)}}" class="btn" style="margin: 10px 0px; padding: 5px 15px; background-color: black; color: white;">Cash on Delivery</a>
-                            <a href="" class="btn" style="margin: 10px 20px; padding: 5px 15px; background-color: black; color: white;">Card</a>
+                            <a href="{{url('stripe',$totalprice)}}" class="btn" style="margin: 10px 20px; padding: 5px 15px; background-color: black; color: white;">Card</a>
                         </div>                        
                     </div>
                 </div>
