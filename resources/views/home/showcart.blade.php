@@ -24,11 +24,21 @@
     <link rel="stylesheet" href="home/css/style.css" type="text/css">
 
     <style>
+
         .img_deg
         {
             height: 100px;
             width: 100px;
         }
+        .button-container 
+        {
+            white-space: nowrap;
+        }
+        .button-container .btn 
+        {
+            display: inline-block;
+        }
+
     </style>
 </head>
 
@@ -39,6 +49,15 @@
     </div>
 
     @include('home.header')
+
+    @if(session()->has('message'))
+
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            {{session()->get('message')}}
+        </div>
+
+    @endif
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -76,7 +95,10 @@
                             </thead>
                             <tbody>
 
-                                <?php $totalprice=0; ?>
+                                <?php $totalprice=0;  ?>
+
+                                <?php $totalproduct=0;  ?>
+
                                 @foreach ($cart as $cart)
                                     
                                 <tr>
@@ -102,7 +124,10 @@
                                     </td>
                                 </tr>
 
+                                <?php $totalproduct++; ?>
+
                                 <?php $totalprice=$totalprice + $cart->price ?>
+
                                 @endforeach
                             </tbody>
                         </table>
@@ -110,7 +135,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a href="#">Continue Shopping</a>
+                                <a href="{{url('/')}}">Continue Shopping</a>
                             </div>
                         </div>
                         {{-- <div class="col-lg-6 col-md-6 col-sm-6">
@@ -132,9 +157,14 @@
                         <h6>Cart total</h6>
                         <ul>
                             {{-- <li>Subtotal <span>$ 169.50</span></li> --}}
-                            <li>Total <span>Rs.{{$totalprice}}</span></li>
+                            <li>Total <span>Rs.{{$totalprice}}</span></li><br>
                         </ul>
-                        <a href="#" class="primary-btn">Proceed to checkout</a>
+                        <h1 style="font-size: 16px;">PROCEED TO CHECKOUT:</h1>
+                        {{-- <a href="#" class="primary-btn">Proceed to checkout</a> --}}
+                        <div class="button-container">
+                            <a href="{{url('cash_order',$totalproduct)}}" class="btn" style="margin: 10px 0px; padding: 5px 15px; background-color: black; color: white;">Cash on Delivery</a>
+                            <a href="" class="btn" style="margin: 10px 20px; padding: 5px 15px; background-color: black; color: white;">Card</a>
+                        </div>                        
                     </div>
                 </div>
             </div>
