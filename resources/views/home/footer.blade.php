@@ -13,23 +13,23 @@
             </div>
             <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Shopping</h6>
+                    {{-- <h6>Shop</h6> --}}
                     <ul>
-                        <li><a href="#">Clothing Store</a></li>
-                        <li><a href="#">Trending Shoes</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Sale</a></li>
+                        <li><a href="#">Skin Care</a></li>
+                        <li><a href="#">Hair Care</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Fragrance</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Shopping</h6>
+                    {{-- <h6>Shopping</h6> --}}
                     <ul>
+                        <li><a href="#">Blogs</a></li>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Payment Methods</a></li>
-                        <li><a href="#">Delivary</a></li>
-                        <li><a href="#">Return & Exchanges</a></li>
+                        <li><a href="#">Cart</a></li>
+                        <li><a href="#">Orders</a></li>
                     </ul>
                 </div>
             </div>

@@ -12,8 +12,8 @@
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-              <span>Gold Member</span>
+              <h5 class="mb-0 font-weight-normal">Admin User</h5>
+              {{-- <span>Gold Member</span> --}}
             </div>
           </div>
           <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -39,7 +39,7 @@
                 <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
               </div>
             </a>
-            <div class="dropdown-divider"></div>
+            {{-- <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
@@ -50,7 +50,7 @@
                 <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
               </div>
             </a>
-          </div>
+          </div> --}}
         </div>
       </li>
       <li class="nav-item nav-category">

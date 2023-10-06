@@ -59,7 +59,7 @@
                                 <li><a href="./blog-details.html">Blog Details</a></li>
                             </ul>
                         </li> --}}
-                        <li><a href="{{url('product_details')}}">Blogs</a></li>
+                        <li><a href="{{url('/allblogs')}}">Blogs</a></li>
                         <li><a href="./contact.html">Contact-Us</a></li>
                     </ul>
                 </nav>

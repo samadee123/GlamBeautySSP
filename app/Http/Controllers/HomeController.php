@@ -162,7 +162,6 @@ class HomeController extends Controller
 
         {
 
-
         $user=Auth::user();
 
         $userid=$user->id;
@@ -293,6 +292,11 @@ class HomeController extends Controller
     {
         $product=Product::all();
         return view('home.shop',compact('product'));
+    }
+
+    public function allblogs()
+    {
+        return view('home.allblogs');
     }
 
 }
