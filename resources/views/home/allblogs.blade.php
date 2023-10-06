@@ -75,7 +75,7 @@
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/shop')}}">Shop</a></li>
                         <li  class="active"><a href="{{url('/allblogs')}}">Blogs</a></li>
-                        <li><a href="./contact.html">Contact-Us</a></li>
+                        <li><a href="#">Contact-Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -131,57 +131,7 @@
                         <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-4.jpg"></div>
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                            <h5>Aiming For Higher The Mastopexy</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-5.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                            <h5>Wedding Rings A Gift For A Lifetime</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-6.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                            <h5>The Different Methods Of Hair Removal</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-7.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                            <h5>Hoop Earrings A Style From History</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-8.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                            <h5>Lasik Eye Surgery Are You Ready</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-9.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                            <h5>Lasik Eye Surgery Are You Ready</h5>
+                            <h5>Lip Care 101: Say Goodbye to Chapped Lips</h5>
                             <a href="#">Read More</a>
                         </div>
                     </div>
@@ -192,17 +142,6 @@
     <!-- Blog Section End -->
 
     @include('home.footer')
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
 
     <!-- Js Plugins -->
     <script src="home/js/jquery-3.3.1.min.js"></script>
