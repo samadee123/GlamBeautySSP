@@ -1391,7 +1391,7 @@ ol {
 	color: #ffffff;
 }
 
-.shop__sidebar__accordion .card-heading a:after,
+/* .shop__sidebar__accordion .card-heading a:after,
 .shop__sidebar__accordion .card-heading>a.active[aria-expanded=false]:after {
 	content: "";
 	font-family: "FontAwesome";
@@ -1414,7 +1414,7 @@ ol {
 	right: 0;
 	top: 2px;
 	line-height: 20px;
-}
+} */
 
 .shop__product__option {
 	margin-bottom: 45px;

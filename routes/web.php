@@ -29,6 +29,7 @@ Route::middleware([
     })->name('dashboard'); 
 });
 
+
 route::get('/redirect',[HomeController::class,'redirect']);
 
 route::get('/view_catagory',[AdminController::class,'view_catagory']);
@@ -53,6 +54,20 @@ route::get('/order',[AdminController::class,'order']);
 
 route::get('/delivered/{id}',[AdminController::class,'delivered']);
 
+route::get('/print_pdf/{id}',[AdminController::class,'print_pdf']);
+
+route::get('/send_email/{id}',[AdminController::class,'send_email']);
+
+route::post('/send_user_email/{id}',[AdminController::class,'send_user_email']);
+
+route::get('/search',[AdminController::class,'searchdata']);
+
+
+
+
+
+
+
 
 
 
@@ -73,6 +88,12 @@ Route::post('stripe/{totalprice}',[HomeController::class, 'stripePost'])->name('
 route::get('/shop',[HomeController::class,'shop']);
 
 route::get('/allblogs',[HomeController::class,'allblogs']);
+
+route::get('/show_order',[HomeController::class,'show_order']);
+
+route::get('/cancel_order/{id}',[HomeController::class,'cancel_order']);
+
+
 
 
 

@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
@@ -94,6 +94,7 @@
                         </li> --}}
                         <li><a href="{{url('/allblogs')}}">Blogs</a></li>
                         <li><a href="./contact.html">Contact-Us</a></li>
+                        <li><a href="{{url('show_order')}}">Orders</a></li>
                     </ul>
                 </nav>
             </div>
@@ -113,7 +114,7 @@
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
-        <div class="container">
+        <div class="container" style="padding-left: 150px; padding-right: 150px;">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
@@ -147,7 +148,6 @@
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
@@ -158,13 +158,11 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
                                     </div>
-                                    <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
@@ -176,25 +174,6 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseSix">Tags</a>
-                                    </div>
-                                    <div id="collapseSix" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__tags">
-                                                <a href="#">Mist</a>
-                                                <a href="#">Deodrant</a>
-                                                <a href="#">Perfume</a>
-                                                <a href="#">Mask</a>
-                                                <a href="#">Oil</a>
-                                                <a href="#">Lotion</a>
-                                                <a href="#">Shampoo</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +184,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Showing 1–12 of 126 results</p>
+                                    <p>Showing 1-12 of 126 results</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -273,17 +252,6 @@
     <!-- Shop Section End -->
 
     @include('home.footer')
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
 
     <!-- Js Plugins -->
     <script src="home/js/jquery-3.3.1.min.js"></script>

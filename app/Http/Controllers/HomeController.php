@@ -220,7 +220,7 @@ class HomeController extends Controller
     public function stripe($totalprice)
     {
         return view('home.stripe',compact('totalprice'));
-    }
+    }   
 
 
     public function stripePost(Request $request,$totalprice)
@@ -297,6 +297,34 @@ class HomeController extends Controller
     public function allblogs()
     {
         return view('home.allblogs');
+    }
+
+    public function show_order()
+    {
+        if(Auth::id())
+        {
+            $user=Auth::user();
+
+            $userid=$user->id;
+
+            $order=order::where('user_id','=',$userid)->get();
+
+            return view('home.order',compact('order'));
+        }
+        else
+        {
+            return redirect('login');
+        }
+    }
+
+    public function cancel_order($id)
+    {
+        $order=order::find($id);
+
+        $order->delivery_status='Order Cancelled';
+
+        $order->save();
+        return redirect()->back();
     }
 
 }

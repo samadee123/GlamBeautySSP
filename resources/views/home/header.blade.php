@@ -61,6 +61,7 @@
                         </li> --}}
                         <li><a href="{{url('/allblogs')}}">Blogs</a></li>
                         <li><a href="./contact.html">Contact-Us</a></li>
+                        <li><a href="{{url('show_order')}}">Orders</a></li>
                     </ul>
                 </nav>
             </div>

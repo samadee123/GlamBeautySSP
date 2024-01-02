@@ -2,7 +2,7 @@
 <section class="hero">
     <div class="hero__slider owl-carousel">
         <div class="hero__items set-bg" data-setbg="img/hero/banner-bg-new.png">
-            <div class="container">
+            <div class="container" style="padding-left: 150px; padding-right: 150px;">
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Glam Beauty</title>
 
@@ -107,7 +107,7 @@
                                             <img class="img_deg" src="/product/{{$cart->image}}" alt="">
                                         </div>
                                         <div class="product__cart__item__text">
-                                            <h6>{{$cart->product_title}}</h6>
+                                            <h6 style="padding-top: 20px">{{$cart->product_title}}</h6>
                                             {{-- <h5>$98.49</h5> --}}
                                         </div>
                                     </td>

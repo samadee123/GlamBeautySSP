@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Glam Beauty</title>
 
@@ -30,15 +30,23 @@
         <div class="loader"></div>
     </div>
 
+    
     @include('home.header')
 
     @include('home.slider')
 
-    @include('home.category')
+    <div style="padding-left: 180px; padding-right: 150px;"> <!-- Add left and right padding to home.category -->
+        @include('home.category')
+    </div>
+    
+    <div style="padding-left: 180px; padding-right: 180px;"> <!-- Add left and right padding to home.category -->
+        @include('home.product')
+    </div>
 
-    @include('home.product')
 
-    @include('home.blog')
+    <div style="padding-left: 180px; padding-right: 180px;"> <!-- Add left and right padding to home.category -->
+        @include('home.blog')
+    </div>
 
     @include('home.footer')
     

@@ -15,7 +15,7 @@
     .table_deg
     {
         border: 2px solid white;
-        width: 95%;
+        width: 100%;
         margin: auto;
         text-align: center;
     }
@@ -26,12 +26,12 @@
     }
     .img_size
     {
-        width: 160px;
-        height: 110px;
+        width: 200px;
+        height: 90px;
     }
     .th_deg
     {
-        padding: 15px;
+        padding: 5px;
     }
     .btn-custom 
     {
@@ -52,6 +52,15 @@
             <div class="content-wrapper">
                 <h1 class="title_deg">All Orders</h1>
 
+                <div style="padding-left: 400px; padding-bottom:30px;">
+                    <form action="{{url('search')}}" method="get">
+                        @csrf
+                        <input type="text" style="color: black;" name="search" placeholder="Search for Something">
+
+                        <input type="submit" value="Search" class="btn btn-outline-primary">
+                    </form>
+                </div>
+
                 <table class="table_deg">
 
                     <tr class="th_deg">
@@ -66,15 +75,17 @@
                         <th class="th_deg">Delivery Status</th>
                         <th class="th_deg">Image</th>
                         <th class="th_deg">Delivered</th>
+                        <th class="th_deg">Print PDF</th>
+                        {{-- <th class="th_deg">Send Email</th> --}}
                     </tr>
 
-                    @foreach ($order as $order)
+                    @forelse ($order as $order)
                         
                     <tr>
-                        <td>{{$order->name}}</td>
-                        <td>{{$order->email}}</td>
-                        <td>{{$order->address}}</td>
-                        <td>{{$order->phone}}</td>
+                        <td style="padding: 3px">{{$order->name}}</td>
+                        <td style="padding: 3px">{{$order->email}}</td>
+                        <td style="padding: 2px">{{$order->address}}</td>
+                        <td style="padding: 3px">{{$order->phone}}</td>
                         <td>{{$order->product_title}}</td>
                         <td>{{$order->quantity}}</td>
                         <td>{{$order->price}}</td>
@@ -88,16 +99,31 @@
 
                             <a href="{{url('delivered',$order->id)}}" class="btn btn-custom" onclick="return confirm('Are You Sure this Product is Delivered?')">Delivered</a>
 
+                            @elseif ($order->delivery_status=='Order Cancelled')
+
+                                <p style="color: red"> Order Cancelled </p>
+
                             @else
 
                                 <p style="color: red"> Delivered </p>
 
                             @endif
-                            {{-- <a href="{{url('delivered',$order->id)}}" class="btn btn-custom">Delivered</a> --}}
                         </td>
+                        <td style="padding: 5px">
+                            <a href="{{url('print_pdf',$order->id)}}" class="btn btn-secondary">Print PDF</a>
+                        </td>
+
+                        {{-- <td style="padding: 2px">
+                            <a href="{{url('send_email',$order->id)}}" class="btn btn-info">Send Email</a>
+                        </td> --}}
                     </tr>
 
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="16">No Data Found</td>
+                    </tr>
+
+                    @endforelse
 
                 </table>
             </div>

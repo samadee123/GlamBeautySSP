@@ -24,25 +24,21 @@
     <link rel="stylesheet" href="home/css/style.css" type="text/css">
 
     <style>
-        /* Add your custom styles here */
+        /* Add your custom styles here if needed */
 
-        /* Style for the button container */
-        .button-container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-top: 20px; /* Adjust as needed for spacing */
-            padding-right: 115px;
+        .shopping-cart {
+            text-align: center;
         }
 
-        /* Style for the button */
-        .custom-button {
-            background-color: #4CAF50; /* Green color, change as needed */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .shopping__cart__table {
+            display: inline-block;
+            /* Adjust the width as needed */
+            width: 90%;
+        }
+        .img_deg
+        {
+            height: 100px;
+            width: 100px;
         }
     </style>
 
@@ -98,9 +94,9 @@
                     <ul>
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/shop')}}">Shop</a></li>
-                        <li  class="active"><a href="{{url('/allblogs')}}">Blogs</a></li>
+                        <li><a href="{{url('/allblogs')}}">Blogs</a></li>
                         <li><a href="#">Contact-Us</a></li>
-                        <li><a href="{{url('show_order')}}">Orders</a></li>
+                        <li class="active"><a href="{{url('show_order')}}">Orders</a></li>
                     </ul>
                 </nav>
             </div>
@@ -117,65 +113,66 @@
 </header>
 <!-- Header Section End -->
 
-<form action="" method="">
-    <div class="button-container">
-        <input class="custom-button" type="submit" value="+ Add a Blog" style="background-color: black; color: white; border: none; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease;">
-    </div>
-
-{{-- <div class="button-container">
-    <button class="custom-button" style="background-color: black; color: white; border: none; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease;">Your Button</button>
-</div> --}}
-
-</form>
-
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
-        <div class="container" style="padding-left: 170px; padding-right: 170px;">
+<section class="shopping-cart spad">
+        <div class="container mx-auto">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog1.jpeg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt="">16 February 2023</span>
-                            <h5>The Ultimate Guide to Achieving Glowing Skin</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 21 May 2022</span>
-                            <h5>Haircare 101: Tips for Healthy and Beautiful Hair</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt="">28 June 2023</span>
-                            <h5>Choosing the Perfect Fragrance for Different Occasions</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-4.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                            <h5>Lip Care 101: Say Goodbye to Chapped Lips</h5>
-                            <a href="#">Read More</a>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Payment Status</th>
+                                    <th>Delivery Status</th>
+                                    <th></th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($order as $order)
+                                <tr>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img class="img_deg" src="/product/{{$order->image}}" alt="">
+                                        </div>
+                                        <div class="product__cart__item__text">
+                                            <h6 style="padding-top: 20px">{{$order->product_title}}</h6>
+                                        </div>
+                                    </td>
+                                    <td class="quantity__item">
+                                        <div class="product__cart__item__text">
+                                            <h4>{{$order->quantity}}</h4>
+                                        </div>
+                                    </td>
+                                    <td class="product__cart__item__text">{{$order->price}}</td>
+                                    <td class="product__cart__item__text">{{$order->payment_status}}</td>
+                                    <td class="product__cart__item__text">{{$order->delivery_status}}</td>
+                                    <td class="cart__close" style="padding-left: 20px">
+
+                                        @if($order->delivery_status=='Processing')
+
+                                        <a onclick="return confirm('Are you sure you want to cancel this order?')" href="{{url('cancel_order',$order->id)}}">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+
+                                        @else
+
+                                        <p></p>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
+
+
 
     @include('home.footer')
 
