@@ -138,7 +138,7 @@
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt="">16 February 2023</span>
                             <h5>The Ultimate Guide to Achieving Glowing Skin</h5>
-                            <a href="#">Read More</a>
+                            <a href="{{url('blogdetails')}}">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt=""> 21 May 2022</span>
                             <h5>Haircare 101: Tips for Healthy and Beautiful Hair</h5>
-                            <a href="#">Read More</a>
+                            <a href="{{url('blogdetails')}}">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt="">28 June 2023</span>
                             <h5>Choosing the Perfect Fragrance for Different Occasions</h5>
-                            <a href="#">Read More</a>
+                            <a href="{{url('blogdetails')}}">Read More</a>
                         </div>
                     </div>
                 </div>

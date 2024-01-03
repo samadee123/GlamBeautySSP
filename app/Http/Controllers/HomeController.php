@@ -327,4 +327,9 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+    public function blogdetails()
+    {
+        return view('home.blogdetails');
+    }
+
 }

@@ -30,6 +30,8 @@ Route::middleware([
 });
 
 
+// Admin Controller
+
 route::get('/redirect',[HomeController::class,'redirect']);
 
 route::get('/view_catagory',[AdminController::class,'view_catagory']);
@@ -66,10 +68,7 @@ route::get('/search',[AdminController::class,'searchdata']);
 
 
 
-
-
-
-
+// Home Controller
 
 route::get('/product_details/{id}',[HomeController::class,'product_details']);
 
@@ -86,6 +85,10 @@ route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
 Route::post('stripe/{totalprice}',[HomeController::class, 'stripePost'])->name('stripe.post');
 
 route::get('/shop',[HomeController::class,'shop']);
+
+route::get('/blogdetails',[HomeController::class,'blogdetails']);
+
+route::get('/favourites',[HomeController::class,'favourites']);
 
 route::get('/allblogs',[HomeController::class,'allblogs']);
 
