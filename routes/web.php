@@ -64,6 +64,11 @@ route::post('/send_user_email/{id}',[AdminController::class,'send_user_email']);
 
 route::get('/search',[AdminController::class,'searchdata']);
 
+route::get('/view_blog',[AdminController::class,'view_blog']);
+
+route::post('/add_blog',[AdminController::class,'add_blog']);
+
+route::get('/show_blog',[AdminController::class,'show_blog']);
 
 
 
@@ -86,7 +91,7 @@ Route::post('stripe/{totalprice}',[HomeController::class, 'stripePost'])->name('
 
 route::get('/shop',[HomeController::class,'shop']);
 
-route::get('/blogdetails',[HomeController::class,'blogdetails']);
+route::get('/blogdetails/{id}',[HomeController::class,'blogdetails']);
 
 route::get('/favourites',[HomeController::class,'favourites']);
 
@@ -95,6 +100,10 @@ route::get('/allblogs',[HomeController::class,'allblogs']);
 route::get('/show_order',[HomeController::class,'show_order']);
 
 route::get('/cancel_order/{id}',[HomeController::class,'cancel_order']);
+
+route::get('/show_fav',[HomeController::class,'show_fav']);
+
+route::post('/add_fav/{id}',[HomeController::class,'add_fav']);
 
 
 

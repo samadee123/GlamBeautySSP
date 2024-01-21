@@ -18,10 +18,18 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="product/{{$products->image}}">
-                        {{-- <span class="label">New</span> --}}
                         <ul class="product__hover">
-                            <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="{{url('product_details',$products->id)}}"><img src="img/icon/search.png" alt=""></a><span>Product<br>Details</span></li>
+
+                                <li>
+                                    <form class="add-fav" action="{{url('add_fav',$products->id)}}" method="Post">
+                                        @csrf
+                                        <button type="submit" class="heart-button" style="border: none; background-color: transparent; cursor: pointer;">
+                                            <img src="img/icon/heart.png" alt="">
+                                        </button>
+                                    </form>
+                                </li>
+
+                                <li><a href="{{url('product_details',$products->id)}}"><img src="img/icon/search.png" alt=""></a><span>Product<br>Details</span></li>
                         </ul>
                     </div>
                     <div class="product__item__text">

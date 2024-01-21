@@ -107,7 +107,7 @@
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
                     <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                    <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                    <a href="{{url('show_fav')}}"><img src="img/icon/heart.png" alt=""></a>
                     <a href="{{url('show_cart')}}"><img src="img/icon/cart.png" alt=""></a>
                 </div>
             </div>
@@ -116,62 +116,22 @@
     </div>
 </header>
 <!-- Header Section End -->
-
-<form action="" method="">
-    <div class="button-container">
-        <input class="custom-button" type="submit" value="+ Add a Blog" style="background-color: black; color: white; border: none; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease;">
-    </div>
-
-{{-- <div class="button-container">
-    <button class="custom-button" style="background-color: black; color: white; border: none; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease;">Your Button</button>
-</div> --}}
-
-</form>
-
     <!-- Blog Section Begin -->
     <section class="blog spad">
         <div class="container" style="padding-left: 170px; padding-right: 170px;">
             <div class="row">
+                @foreach ($blogs as $blogs)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog1.jpeg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="blog/{{$blogs->image}}"></div>
                         <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt="">16 February 2023</span>
-                            <h5>The Ultimate Guide to Achieving Glowing Skin</h5>
-                            <a href="{{url('blogdetails')}}">Read More</a>
+                            <span><img src="img/icon/calendar.png" alt="">{{ $blogs->created_at->format('Y-m-d') }}</span>
+                            <h5>{{$blogs->title}}</h5>
+                            <a href="{{url('blogdetails',$blogs->id)}}">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 21 May 2022</span>
-                            <h5>Haircare 101: Tips for Healthy and Beautiful Hair</h5>
-                            <a href="{{url('blogdetails')}}">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt="">28 June 2023</span>
-                            <h5>Choosing the Perfect Fragrance for Different Occasions</h5>
-                            <a href="{{url('blogdetails')}}">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-4.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                            <h5>Lip Care 101: Say Goodbye to Chapped Lips</h5>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

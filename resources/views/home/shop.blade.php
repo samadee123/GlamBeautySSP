@@ -101,7 +101,7 @@
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
                     <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                    <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                    <a href="{{url('show_fav')}}"><img src="img/icon/heart.png" alt=""></a>
                     <a href="{{url('show_cart')}}"><img src="img/icon/cart.png" alt=""></a>
                     {{-- <div class="price">Cart</div> --}}
                 </div>
@@ -207,7 +207,14 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="product/{{$product->image}}">
                                     <ul class="product__hover">
-                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                        <li>
+                                            <form class="add-fav" action="{{url('add_fav',$product->id)}}" method="Post">
+                                                @csrf
+                                                <button type="submit" class="heart-button" style="border: none; background-color: transparent; cursor: pointer;">
+                                                    <img src="img/icon/heart.png" alt="">
+                                                </button>
+                                            </form>
+                                        </li>
                                         <li><a href="{{url('product_details',$product->id)}}"><img src="img/icon/search.png" alt=""><span>Product<br>Details</span></a></li>
                                     </ul>
                                 </div>

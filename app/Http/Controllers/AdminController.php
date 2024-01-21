@@ -10,11 +10,14 @@ use App\Models\Product;
 
 use App\Models\Order;
 
+use App\Models\Blog;
+
 use PDF;
 
 use Notification;
 
 use App\Notifications\SendEmailNotification;
+
 
 class AdminController extends Controller
 {
@@ -201,5 +204,40 @@ class AdminController extends Controller
         $order=order::where('name','LIKE',"%$searchText%")->orWhere('phone','LIKE',"%$searchText%")->orWhere('address','LIKE',"%$searchText%")->orWhere('product_title','LIKE',"%$searchText%")->orWhere('price','LIKE',"%$searchText%")->orWhere('payment_status','LIKE',"%$searchText%")->orWhere('delivery_status','LIKE',"%$searchText%")->get();
 
         return view('admin.order',compact('order'));
+    }
+
+    public function view_blog()
+    {
+        return view('admin.blog');
+    }
+
+    public function add_blog(Request $request)
+    {
+        $blogs=new Blog;
+
+        $blogs->title=$request->title;
+
+        $blogs->description=$request->description;
+
+
+        $image=$request->image;
+
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('blog',$imagename);
+
+        $blogs->image=$imagename;
+
+
+        $blogs->save();
+
+        return redirect()->back()->with('message','Blog Added Successfully');
+
+    }
+
+    public function show_blog()
+    {
+        $blogs=Blog::all();
+        return view('admin.show_blog',compact('blogs'));
     }
 }

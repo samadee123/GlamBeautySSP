@@ -14,6 +14,8 @@ use App\Models\Cart;
 
 use App\Models\Order;
 
+use App\Models\Blog;
+
 use Session;
 
 use Stripe;
@@ -296,7 +298,14 @@ class HomeController extends Controller
 
     public function allblogs()
     {
-        return view('home.allblogs');
+        $blogs=Blog::all();
+        return view('home.allblogs',compact('blogs'));
+    }
+
+    public function blogdetails($id)
+    {
+        $blogs=Blog::find($id);
+        return view('home.blogdetails',compact('blogs'));
     }
 
     public function show_order()
@@ -327,9 +336,22 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    public function blogdetails()
+    public function show_fav()
     {
-        return view('home.blogdetails');
+        return view('home.favourites');   
+    }
+
+    public function add_fav($id)
+    {
+        if(Auth::id())
+        {
+            return redirect()->back();
+        }
+
+        else 
+        {
+            return redirect('login');
+        }
     }
 
 }
