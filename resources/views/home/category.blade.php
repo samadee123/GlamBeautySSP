@@ -8,7 +8,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2 style="font-size: 25px;">Skin Care <center>&<br></center> Hair Care</h2>
-                        <a href="#">Shop now</a>
+                        <a href="{{url('skinhair_filter')}}">Shop now</a>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2 style="font-size: 25px;">Fragrance</h2>
-                        <a href="#">Shop now</a>
+                        <a href="{{url('fragrance_filter')}}">Shop now</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2 style="font-size: 25px;">MakeUp</h2>
-                        <a href="#">Shop now</a>
+                        <a href="{{url('makeup_filter')}}">Shop now</a>
                     </div>
                 </div>
             </div>

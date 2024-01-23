@@ -135,6 +135,10 @@ route::get('/hair_filter',[HomeController::class,'hair_filter']);
 
 route::get('/makeup_filter',[HomeController::class,'makeup_filter']);
 
+route::get('/fragrance_filter',[HomeController::class,'fragrance_filter']);
+
+route::get('/skinhair_filter',[HomeController::class,'skinhair_filter']);
+
 
 
 

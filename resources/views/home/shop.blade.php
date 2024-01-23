@@ -155,7 +155,7 @@
                                                     <li><a href="{{url('skin_filter')}}">Skin Care (20)</a></li>
                                                     <li><a href="{{url('hair_filter')}}">Hair Care (20)</a></li>
                                                     <li><a href="{{url('makeup_filter')}}">Makeup (20)</a></li>
-                                                    <li><a href="#">Fragrance (20)</a></li>
+                                                    <li><a href="{{url('fragrance_filter')}}">Fragrance (20)</a></li>
                                                 </ul>
                                             </div>
                                         </div>

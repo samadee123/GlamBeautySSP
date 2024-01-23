@@ -463,4 +463,26 @@ class HomeController extends Controller
         return view('home.shop', compact('product'));
     }
 
+    public function makeup_filter()
+    {
+        $product = product::where('catagory', 'Makeup')->get();
+
+        return view('home.shop', compact('product'));
+    }
+
+    public function fragrance_filter()
+    {
+        $product = product::where('catagory', 'Fragrance')->get();
+
+        return view('home.shop', compact('product'));
+    }
+    
+    public function skinhair_filter()
+    {
+        $product = Product::whereHas('categories', function ($query) {
+            $query->whereIn('catagory', ['Skin Care', 'Hair Care']);
+        })->get();
+
+        return view('home.shop', compact('product'));
+    }
 }
