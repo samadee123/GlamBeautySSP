@@ -101,7 +101,7 @@
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/shop')}}">Shop</a></li>
                         <li  class="active"><a href="{{url('/allblogs')}}">Blogs</a></li>
-                        <li><a href="#">Contact-Us</a></li>
+                        <li><a href="{{url('contact_us')}}">Contact-Us</a></li>
                         <li><a href="{{url('show_order')}}">Orders</a></li>
                     </ul>
                 </nav>

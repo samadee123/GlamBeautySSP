@@ -55,7 +55,7 @@
 
                 @endif
 
-                <h2 class="font_size">All Products</h2>
+                <h2 class="font_size" style="color: black">All Products</h2>
 
                 <table class="center">
                     <tr class="th_color">
@@ -73,12 +73,12 @@
                     @foreach ($product as $product)
                         
                     <tr>
-                        <td>{{$product->title}}</td>
-                        <td>{{$product->description}}</td>
-                        <td>{{$product->quantity}}</td>
-                        <td>{{$product->catagory}}</td>
-                        <td>{{$product->price}}</td>
-                        <td>{{$product->discount_price}}</td>
+                        <td style="color: black">{{$product->title}}</td>
+                        <td style="color: black">{{$product->description}}</td>
+                        <td style="color: black">{{$product->quantity}}</td>
+                        <td style="color: black">{{$product->catagory}}</td>
+                        <td style="color: black">{{$product->price}}</td>
+                        <td style="color: black">{{$product->discount_price}}</td>
                         <td>
                             <img class="img_size" src="/product/{{$product->image}}">
                         </td>

@@ -59,32 +59,22 @@
 
                 @endif
 
-                <h2 class="font_size"  style="color: black">All Blogs</h2>
+                <h2 class="font_size">All Messages</h2>
 
                 <table class="center">
                     <tr class="th_color">
-                        <th class="th_deg">Blog Title</th>
-                        <th class="th_deg">Description</th>
-                        <th class="th_deg">Blog Image</th>
-                        <th class="th_deg">Delete</th>
-                        <th class="th_deg">Edit</th>
+                        <th class="th_deg">Name</th>
+                        <th class="th_deg">Email</th>
+                        <th class="th_deg">Message</th>
+
                     </tr>
 
-                    @foreach ($blogs as $blogs)
+                    @foreach ($contactus as $contactus)
                         
                     <tr>
-                        <td style="padding-bottom: 20px; color: black">{{$blogs->title}}</td>
-                        <td style="padding-bottom: 20px; color: black" class="description-column">{{$blogs->description}}</td>
-                        <td style="padding-bottom: 20px; color: black">
-                            <img class="img_size" src="/blog/{{$blogs->image}}">
-                        </td>
-                        <td style="padding-bottom: 20px;">
-                            <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')" href="{{url('delete_blog',$blogs->id)}}">Delete</a>
-                        </td>
-
-                        <td style="padding-bottom: 20px;">
-                            <a class="btn btn-success" href="{{url('update_blog',$blogs->id)}}">Edit</a>
-                        </td>
+                        <td style="padding-bottom: 20px;">{{$contactus->name}}</td>
+                        <td style="padding-bottom: 20px;">{{$contactus->email}}</td>
+                        <td style="padding-bottom: 20px;" class="description-column">{{$contactus->message}}</td>
                     </tr>
 
                     @endforeach

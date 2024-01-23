@@ -12,6 +12,10 @@ use App\Models\Order;
 
 use App\Models\Blog;
 
+use App\Models\contactus;
+
+use App\Models\User;
+
 use PDF;
 
 use Notification;
@@ -240,4 +244,67 @@ class AdminController extends Controller
         $blogs=Blog::all();
         return view('admin.show_blog',compact('blogs'));
     }
+
+    public function delete_blog($id)
+    {
+        $blogs=Blog::find($id);
+
+        $blogs->delete();
+
+        return redirect()->back()->with('message','Product Deleted Successfully');
+    }
+
+    public function show_contactus()
+    {
+        $contactus=contactus::all();
+        return view('admin.show_contactus',compact('contactus'));
+    }
+
+    public function update_blog($id)
+    {
+        $blogs=Blog::find($id);
+        return view('admin.update_blog',compact('blogs'));
+    }
+
+    public function update_blog_confirm(Request $request,$id)
+    {
+        $blogs=Blog::find($id);
+
+        $blogs->title=$request->title;
+
+        $blogs->description=$request->description;
+
+        $image=$request->image;
+
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+
+            $request->image->move('blogs',$imagename);
+    
+            $blogs->image=$imagename;
+        }
+
+
+        $blogs->save();
+
+        return redirect()->back()->with('message','Blog Updated Successfully');
+    }
+
+    public function user_management()
+    {
+        $user = user::where('usertype', 0)->get();
+        return view('admin.users',compact('user'));
+    }
+
+    public function delete_user($id)
+    {
+        $user=user::find($id);
+
+        $user->delete();
+
+        return redirect()->back()->with('message','User Removed Successfully');
+    }
+
+
 }

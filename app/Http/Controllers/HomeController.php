@@ -16,6 +16,12 @@ use App\Models\Order;
 
 use App\Models\Blog;
 
+use App\Models\Favourite;
+
+use App\Models\contactus;
+
+use App\Models\Catagory;
+
 use Session;
 
 use Stripe;
@@ -338,20 +344,123 @@ class HomeController extends Controller
 
     public function show_fav()
     {
-        return view('home.favourites');   
+        if(Auth::id())
+        {
+            $id=Auth::user()->id;
+         
+            $favourite=favourite::where('user_id','=',$id)->get();
+
+            return view('home.favourites',compact('favourite'));
+        }
+
+        else
+        {
+            return redirect('login');
+        }
+           
     }
 
     public function add_fav($id)
     {
         if(Auth::id())
         {
+            $user=Auth::user();
+
+            $product=product::find($id);
+
+            $favourite=new favourite();
+
+            $favourite->name=$user->name;
+
+            $favourite->email=$user->email;
+
+            $favourite->phone=$user->phone;
+
+            $favourite->address=$user->address;
+
+            $favourite->user_id=$user->id;
+
+            $favourite->product_title=$product->title;
+
+            if($product->discount_price!=null)
+            {
+                $favourite->price=$product->discount_price;
+            }
+
+            else
+            {
+                $favourite->price=$product->price;
+            }
+
+
+            $favourite->image=$product->image;
+
+            $favourite->product_id=$product->id;
+
+            $favourite->save();
+
             return redirect()->back();
+
         }
 
         else 
         {
             return redirect('login');
         }
+    }
+
+    public function remove_fav($id)
+    {
+        $favourite=favourite::find($id);
+
+        $favourite->delete();
+
+        return redirect()->back();
+    }
+
+    public function contact_us()
+    {
+        return view('home.contactus');
+    }
+
+    public function add_contactus(Request $request)
+    {
+        $contactus=new contactus;
+
+        $contactus->name=$request->name;
+
+        $contactus->email=$request->email;
+
+        $contactus->message=$request->message;
+
+        $contactus->save();
+
+        return redirect()->back();
+
+    }
+
+    public function product_search(Request $request)
+    {
+        $search_text=$request->search;
+
+        $product=product::where('title','LIKE',"%$search_text%")->get();
+
+        return view('home.shop',compact('product'));
+    }
+
+    public function skin_filter()
+    {
+        $product = product::where('catagory', 'Skin Care')->get();
+
+        return view('home.shop', compact('product'));
+
+    }
+
+    public function hair_filter()
+    {
+        $product = product::where('catagory', 'Hair Care')->get();
+
+        return view('home.shop', compact('product'));
     }
 
 }

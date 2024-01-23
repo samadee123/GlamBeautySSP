@@ -50,7 +50,7 @@
 
         <div class="main-panel">
             <div class="content-wrapper">
-                <h1 class="title_deg">All Orders</h1>
+                <h1 class="title_deg" style="color: black">All Orders</h1>
 
                 <div style="padding-left: 400px; padding-bottom:30px;">
                     <form action="{{url('search')}}" method="get">
@@ -82,15 +82,15 @@
                     @forelse ($order as $order)
                         
                     <tr>
-                        <td style="padding: 3px">{{$order->name}}</td>
-                        <td style="padding: 3px">{{$order->email}}</td>
-                        <td style="padding: 2px">{{$order->address}}</td>
-                        <td style="padding: 3px">{{$order->phone}}</td>
-                        <td>{{$order->product_title}}</td>
-                        <td>{{$order->quantity}}</td>
-                        <td>{{$order->price}}</td>
-                        <td>{{$order->payment_status}}</td>
-                        <td>{{$order->delivery_status}}</td>
+                        <td style="padding: 3px; color: black">{{$order->name}}</td>
+                        <td style="padding: 3px; color: black">{{$order->email}}</td>
+                        <td style="padding: 2px; color: black">{{$order->address}}</td>
+                        <td style="padding: 3px; color: black">{{$order->phone}}</td>
+                        <td style="color: black">{{$order->product_title}}</td>
+                        <td style="color: black">{{$order->quantity}}</td>
+                        <td style="color: black">{{$order->price}}</td>
+                        <td style="color: black">{{$order->payment_status}}</td>
+                        <td style="color: black">{{$order->delivery_status}}</td>
                         <td>
                             <img class="img_size" src="/product/{{$order->image}}">
                         </td>

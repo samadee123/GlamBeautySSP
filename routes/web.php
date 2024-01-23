@@ -70,6 +70,22 @@ route::post('/add_blog',[AdminController::class,'add_blog']);
 
 route::get('/show_blog',[AdminController::class,'show_blog']);
 
+route::get('/delete_blog/{id}',[AdminController::class,'delete_blog']);
+
+route::get('/show_contactus',[AdminController::class,'show_contactus']);
+
+route::get('/update_blog/{id}',[AdminController::class,'update_blog']);
+
+route::post('/update_blog_confirm/{id}',[AdminController::class,'update_blog_confirm']);
+
+route::get('/user_management',[AdminController::class,'user_management']);
+
+route::get('/delete_user/{id}',[AdminController::class,'delete_user']);
+
+
+
+
+
 
 
 
@@ -105,6 +121,19 @@ route::get('/show_fav',[HomeController::class,'show_fav']);
 
 route::post('/add_fav/{id}',[HomeController::class,'add_fav']);
 
+route::get('/remove_fav/{id}',[HomeController::class,'remove_fav']);
+
+route::get('/contact_us',[HomeController::class,'contact_us']);
+
+route::post('/add_contactus',[HomeController::class,'add_contactus']);
+
+route::get('/product_search',[HomeController::class,'product_search']); 
+
+route::get('/skin_filter',[HomeController::class,'skin_filter']);
+
+route::get('/hair_filter',[HomeController::class,'hair_filter']); 
+
+route::get('/makeup_filter',[HomeController::class,'makeup_filter']);
 
 
 

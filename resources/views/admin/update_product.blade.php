@@ -52,39 +52,39 @@
                 @endif
                 
                 <div class="div_center">
-                    <h1 class="font_size">Update Product</h1>
+                    <h1 class="font_size" style="color: black">Update Product</h1>
 
                     <form action="{{url('/update_product_confirm',$product->id)}}" method="POST" enctype="multipart/form-data">
 
                     @csrf
 
                     <div class="div_design">
-                        <label>Product Title : </label>
+                        <label style="color: black">Product Title : </label>
                         <input class="text_color" type="text" name="title" placeholder="Write a title" required="" value="{{$product->title}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Description : </label>
+                        <label style="color: black">Product Description : </label>
                         <input class="text_color" type="text" name="description" placeholder="Write a description" required="" value="{{$product->description}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Price : </label>
+                        <label style="color: black">Product Price : </label>
                         <input class="text_color" type="number" name="price" placeholder="Write a price" required="" value="{{$product->price}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Discount Price : </label>
+                        <label style="color: black">Discount Price : </label>
                         <input class="text_color" type="number" name="dis_price" placeholder="Write a discount if apply" value="{{$product->discount_price}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Quantity : </label>
+                        <label style="color: black">Product Quantity : </label>
                         <input class="text_color" type="number" min="0" name="quantity" placeholder="Write a quantity" required="" value="{{$product->quantity}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Catagory : </label>
+                        <label style="color: black">Product Catagory : </label>
                         <select class="text_color" name="catagory" required="">
                             <option value="{{$product->catagory}}" selected="">{{$product->catagory}}</option>
 
@@ -98,17 +98,17 @@
                     </div>
 
                     <div class="div_design">
-                        <label>Current Product Image : </label>
+                        <label style="color: black">Current Product Image : </label>
                         <img style="margin:auto;" height="100" width="100" src="/product/{{$product->image}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Change Product Image : </label>
-                        <input type="file" name="image">
+                        <label style="color: black">Change Product Image : </label>
+                        <input style="color: black" type="file" name="image">
                     </div>
 
                     <div class="div_design">
-                        <input type="submit" value="Update Product" class="btn btn-primary">
+                        <input style="color: black" type="submit" value="Update Product" class="btn btn-primary">
                     </div>
 
                 </form>

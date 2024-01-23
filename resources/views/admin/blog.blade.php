@@ -58,29 +58,29 @@
                 @endif
                 
                 <div class="div_center">
-                    <h1 class="font_size">Add Blog</h1>
+                    <h1 class="font_size" style="color: black">Add Blog</h1>
 
                     <form action="{{url('/add_blog')}}" method="POST" enctype="multipart/form-data">
 
                     @csrf
 
                     <div class="div_design">
-                        <label>Blog Title : </label>
+                        <label style="color: black">Blog Title : </label>
                         <input class="text_color" type="text" name="title" id="title" placeholder="Write a title" required="">
                     </div>
 
                     <div class="div_design flex-center">
-                        <label>Blog Description : </label>
+                        <label style="color: black">Blog Description : </label>
                         <textarea class="text_color" type="text" name="description" id="description" cols="30" rows="10"placeholder="Write a description" required=""></textarea>
                     </div> <br>
 
                     <div class="div_design">
-                        <label>Blog Image Here : </label>
-                        <input type="file" name="image" required="">
+                        <label style="color: black">Blog Image Here : </label>
+                        <input style="color: black" type="file" name="image" required="">
                     </div>
 
                     <div class="div_design">
-                        <input type="submit" value="Add Blog" class="btn btn-primary">
+                        <input style="color: black" type="submit" value="Add Blog" class="btn btn-primary">
                     </div>
 
                 </form>

@@ -93,7 +93,7 @@
                             </ul>
                         </li> --}}
                         <li><a href="{{url('/allblogs')}}">Blogs</a></li>
-                        <li><a href="./contact.html">Contact-Us</a></li>
+                        <li><a href="{{url('contact_us')}}">Contact-Us</a></li>
                         <li><a href="{{url('show_order')}}">Orders</a></li>
                     </ul>
                 </nav>
@@ -137,8 +137,9 @@
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
                         <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
+                            <form action="{{url('product_search')}}" method="GET">
+                                @csrf
+                                <input type="text" placeholder="Search..." name="search">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
@@ -151,9 +152,9 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#">Skin Care (20)</a></li>
-                                                    <li><a href="#">hair Care (20)</a></li>
-                                                    <li><a href="#">Makeup (20)</a></li>
+                                                    <li><a href="{{url('skin_filter')}}">Skin Care (20)</a></li>
+                                                    <li><a href="{{url('hair_filter')}}">Hair Care (20)</a></li>
+                                                    <li><a href="{{url('makeup_filter')}}">Makeup (20)</a></li>
                                                     <li><a href="#">Fragrance (20)</a></li>
                                                 </ul>
                                             </div>

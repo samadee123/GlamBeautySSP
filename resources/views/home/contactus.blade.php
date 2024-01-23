@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Glam Beauty</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="home/css/bootstrap.min.css" type="text/css">
@@ -22,39 +22,10 @@
     <link rel="stylesheet" href="home/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="home/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="home/css/style.css" type="text/css">
-
-    <style>
-        /* Add your custom styles here */
-
-        /* Style for the button container */
-        .button-container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-top: 20px; /* Adjust as needed for spacing */
-            padding-right: 115px;
-        }
-
-        /* Style for the button */
-        .custom-button {
-            background-color: #4CAF50; /* Green color, change as needed */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
+        <!-- Header Section Begin -->
 <header class="header">
     <div class="header__top">
         <div class="container">
@@ -81,12 +52,20 @@
                             @endauth
                             @endif
                         </div>
+                        {{-- <div class="header__top__hover">
+                            <span>Usd <i class="arrow_carrot-down"></i></span>
+                            <ul>
+                                <li>USD</li>
+                                <li>EUR</li>
+                                <li>USD</li>
+                            </ul>
+                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
@@ -98,8 +77,17 @@
                     <ul>
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/shop')}}">Shop</a></li>
-                        <li  class="active"><a href="{{url('/allblogs')}}">Blogs</a></li>
-                        <li><a href="{{url('contact_us')}}">Contact-Us</a></li>
+                        {{-- <li><a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="./about.html">About Us</a></li>
+                                <li><a href="./shop-details.html">Shop Details</a></li>
+                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                <li><a href="./checkout.html">Check Out</a></li>
+                                <li><a href="./blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li> --}}
+                        <li><a href="{{url('/allblogs')}}">Blogs</a></li>
+                        <li class="active"><a href="{{url('contact_us')}}">Contact-Us</a></li>
                         <li><a href="{{url('show_order')}}">Orders</a></li>
                     </ul>
                 </nav>
@@ -109,6 +97,7 @@
                     <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                     <a href="{{url('show_fav')}}"><img src="img/icon/heart.png" alt=""></a>
                     <a href="{{url('show_cart')}}"><img src="img/icon/cart.png" alt=""></a>
+                    {{-- <div class="price">Cart</div> --}}
                 </div>
             </div>
         </div>
@@ -116,28 +105,60 @@
     </div>
 </header>
 <!-- Header Section End -->
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
-        <div class="container" style="padding-left: 170px; padding-right: 170px;">
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
             <div class="row">
-                @foreach ($blogs as $blogs)
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="blog/{{$blogs->image}}"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt="">{{ $blogs->created_at->format('Y-m-d') }}</span>
-                            <h5>{{$blogs->title}}</h5>
-                            <a href="{{url('blogdetails',$blogs->id)}}">Read More</a>
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__text">
+                        <div class="section-title">
+                            <span>Information</span>
+                            <h2>Contact Us</h2><br>
+                            <p>Feel free to reach out with any questions, feedback, or inquiries! 
+                                Our Contact Us page is designed to make it easy for you to send us a message. 
+                                We're here to assist you in any way we can.</p>
                         </div>
+                        {{-- <ul>
+                            <li>
+                                <h4>America</h4>
+                                <p>195 E Parker Square Dr, Parker, CO 801 <br />+43 982-314-0958</p>
+                            </li>
+                            <li>
+                                <h4>France</h4>
+                                <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+12 345-423-9893</p>
+                            </li>
+                        </ul> --}}
                     </div>
                 </div>
-                @endforeach
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__form">
+                        <form action="{{url('/add_contactus')}}" method="POST" enctype="multipart/form-data">
+
+                            @csrf
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Name" name="name" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Email" name="email" required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea placeholder="Message" name="message" required></textarea>
+                                    <button type="submit" class="site-btn" style="background-color: black; color: white;">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
+    <!-- Contact Section End -->
 
     @include('home.footer')
+    
 
     <!-- Js Plugins -->
     <script src="home/js/jquery-3.3.1.min.js"></script>
