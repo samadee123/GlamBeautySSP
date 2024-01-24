@@ -139,6 +139,21 @@ route::get('/fragrance_filter',[HomeController::class,'fragrance_filter']);
 
 route::get('/skinhair_filter',[HomeController::class,'skinhair_filter']);
 
+route::get('/firstprice_filter',[HomeController::class,'firstprice_filter']);
+
+route::get('/secondprice_filter',[HomeController::class,'secondprice_filter']);
+
+route::get('/thirdprice_filter',[HomeController::class,'thirdprice_filter']);
+
+route::get('/fourthprice_filter',[HomeController::class,'fourthprice_filter']);
+
+route::get('/lowtohigh_filter',[HomeController::class,'lowtohigh_filter']);
+
+
+
+
+
+
 
 
 

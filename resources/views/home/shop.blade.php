@@ -167,11 +167,10 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
-                                                    <li><a href="#">Rs.0.00 - Rs.5000.00</a></li>
-                                                    <li><a href="#">Rs.5000.00 - Rs.15,000.00</a></li>
-                                                    <li><a href="#">Rs.15,000.00 - Rs.30,000.00</a></li>
-                                                    <li><a href="#">Rs.30,000.00 - Rs.50,000.00</a></li>
-                                                    <li><a href="#">Rs.50,000.00+</a></li>
+                                                    <li><a href="{{url('firstprice_filter')}}">Rs.0.00 - Rs.5000.00</a></li>
+                                                    <li><a href="{{url('secondprice_filter')}}">Rs.5000.00 - Rs.15,000.00</a></li>
+                                                    <li><a href="{{url('thirdprice_filter')}}">Rs.15,000.00 - Rs.30,000.00</a></li>
+                                                    <li><a href="{{url('fourthprice_filter')}}">Rs.30,000.00+</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -192,14 +191,23 @@
                                 <div class="shop__product__option__right">
                                     <p>Sort by Price:</p>
                                     <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">$0 - $55</option>
-                                        <option value="">$55 - $100</option>
+                                        <option value="">Low To High</a></option>
+                                        <option value="">High To Low</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    @if(session()->has('message'))
+
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            {{session()->get('message')}}
+                        </div>
+
+                    @endif
+                    
                     <div class="row">
 
                         @foreach ($product as $product)
