@@ -92,7 +92,7 @@
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Total Orderes Delivered</h6>
+              <h6 class="text-muted font-weight-normal">Total Orders Delivered</h6>
             </div>
           </div>
         </div>
@@ -111,23 +111,84 @@
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Total Orderes Processing </h6>
+              <h6 class="text-muted font-weight-normal">Total Orders Processing </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-9">
+                  <div class="d-flex align-items-center align-self-start">
+                    <h3 class="mb-0">{{$total_cancelled}}</h3>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="icon icon-box-danger">
+                    <span class="mdi mdi-arrow-bottom-left icon-item"></span>
+                  </div>
+                </div>
+              </div>
+              <h6 class="text-muted font-weight-normal">Total Orders Cancelled</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-9">
+                  <div class="d-flex align-items-center align-self-start">
+                    <h3 class="mb-0">{{$total_blogs}}</h3>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="icon icon-box-danger">
+                    <span class="mdi mdi-arrow-bottom-left icon-item"></span>
+                  </div>
+                </div>
+              </div>
+              <h6 class="text-muted font-weight-normal">Total Blogs</h6>
             </div>
           </div>
         </div>
       </div> 
+      <div class="main-panel">
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Products by Category</h4>
+                  <canvas id="pieChart" style="height:250px"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Sales by Category</h4>
+                  <canvas id="barChart" style="height:230px"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- partial -->
+      </div>
     </div>
     <!-- content-wrapper ends -->
     <!-- partial:partials/_footer.html -->
-    {{-- <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-      </div>
-    </footer> --}}
     <!-- partial -->
   </div>
   <!-- main-panel ends -->
 </div>
 <!-- page-body-wrapper ends -->
 </div>
+
+<script>
+  var totalSkin = {{ $total_skin }};
+  var totalHair = {{ $total_hair }};
+  var totalMakeup = {{ $total_makeup }};
+  var totalFragrance = {{ $total_fragrance }};
+</script>

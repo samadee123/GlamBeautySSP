@@ -1,14 +1,15 @@
 $(function() {
+  
   /* ChartJS
    * -------
    * Data and config for chartjs
    */
   'use strict';
   var data = {
-    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+    labels: ["Skin Care", "Hair Care", "Makeup", "Fragrance"],
     datasets: [{
       label: '# of Votes',
-      data: [10, 19, 3, 5, 2, 3],
+      data: [50, 19, 30, 25, 12, 13],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -86,10 +87,9 @@ $(function() {
     }
   };
 
-  
   var doughnutPieData = {
     datasets: [{
-      data: [30, 40, 30],
+      data: [totalSkin, totalMakeup, totalFragrance, totalHair],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
@@ -110,9 +110,10 @@ $(function() {
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-      'Pink',
-      'Blue',
-      'Yellow',
+      'Skin Care',
+      'Makeup',
+      'Fragrance',
+      'Hair Care',
     ]
   };
   var doughnutPieOptions = {

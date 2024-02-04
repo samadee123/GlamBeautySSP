@@ -306,5 +306,4 @@ class AdminController extends Controller
         return redirect()->back()->with('message','User Removed Successfully');
     }
 
-
 }

@@ -44,9 +44,19 @@ class HomeController extends Controller
         {
             $total_product=product::all()->count();
 
+            $total_skin=product::where('catagory','=','Skin Care')->get()->count();
+
+            $total_hair=product::where('catagory','=','Hair Care')->get()->count();
+
+            $total_makeup=product::where('catagory','=','Makeup')->get()->count();
+
+            $total_fragrance=product::where('catagory','=','Fragrance')->get()->count();
+
             $total_order=order::all()->count();
 
             $total_user=user::all()->count();
+
+            $total_blogs=blog::all()->count();
 
             $order=order::all();
 
@@ -59,9 +69,11 @@ class HomeController extends Controller
 
             $total_delivered=order::where('delivery_status','=','Delivered')->get()->count();
 
+            $total_cancelled=order::where('delivery_status','=','Order Cancelled')->get()->count();
+
             $total_processing=order::where('delivery_status','=','Processing')->get()->count();
 
-            return view('admin.home',compact('total_product','total_order','total_user','total_revenue','total_delivered','total_processing'));
+            return view('admin.home',compact('total_product','total_order','total_user','total_revenue','total_delivered','total_processing','total_cancelled','total_blogs','total_skin','total_hair','total_makeup','total_fragrance'));
 
         }
 

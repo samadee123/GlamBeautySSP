@@ -72,9 +72,9 @@
                     @foreach ($contactus as $contactus)
                         
                     <tr>
-                        <td style="padding-bottom: 20px;">{{$contactus->name}}</td>
-                        <td style="padding-bottom: 20px;">{{$contactus->email}}</td>
-                        <td style="padding-bottom: 20px;" class="description-column">{{$contactus->message}}</td>
+                        <td style="padding-bottom: 20px; color: black">{{$contactus->name}}</td>
+                        <td style="padding-bottom: 20px; color: black">{{$contactus->email}}</td>
+                        <td style="padding-bottom: 20px; color: black" class="description-column">{{$contactus->message}}</td>
                     </tr>
 
                     @endforeach
